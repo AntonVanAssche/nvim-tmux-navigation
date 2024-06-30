@@ -1,0 +1,68 @@
+*nvim-tmux-navigation.txt*   Easy Neovim-Tmux navigation, completely written
+                           in Lua
+*Neovim-Tmux-Navigation*
+
+License: MIT
+Author: Alexandru Gherghescu <https://github.com/alexghergh>
+
+===============================================================================
+CONTENTS                                              *nvim-tmux-navigation-toc*
+
+    1. Commands.............|nvim-tmux-navigation-commands|
+    2. Configuration........|nvim-tmux-navigation-configuration|
+
+===============================================================================
+
+1. Commands                                      *nvim-tmux-navigation-commands*
+
+NvimTmuxNavigateLeft                                     *:NvimTmuxNavigateLeft*
+
+    Move to the left tmux, or Neovim, pane
+
+NvimTmuxNavigateRight                                   *:NvimTmuxNavigateRight*
+
+    Move to the right tmux, or Neovim, pane
+
+NvimTmuxNavigateUp                                         *:NvimTmuxNavigateUp*
+
+    Move to the tmux, or Neovim, pane above
+
+NvimTmuxNavigateDown                                     *:NvimTmuxNavigateDown*
+
+    Move to the tmux, or Neovim, pane beneath
+
+NvimTmuxNavigateLastActive                         *:NvimTmuxNavigateLastActive*
+
+    Move to the last active tmux, or Neovim, pane
+
+NvimTmuxNavigateNext                                     *:NvimTmuxNavigateNext*
+
+    Move to the next tmux, or Neovim, pane
+
+===============================================================================
+2. Configuration                            *nvim-tmux-navigation-configuration*
+
+    Keybindings for the commands can be set in your `init.vim` or `init.lua`
+    file. Here is an example of how you can set them:
+>
+    require'nvim-tmux-navigation'.setup {
+        keybindings = {
+            left = "<C-h>",
+            down = "<C-j>",
+            up = "<C-k>",
+            right = "<C-l>",
+            last_active = "<C-\\>",
+            next = "<C-Space>",
+        }
+    }
+<
+    To enable the plugin in zoomed panes, you can set the
+    `disable_when_zoomed` option to `false` (default is `true`)
+    in your `init.vim` or `init.lua` file.
+>
+    require'nvim-tmux-navigation'.setup {
+      disable_when_zoomed = false
+    }
+<
+===============================================================================
+vim:tw=78:ts=2:sts=2:sw=2:ft=help:norl:
